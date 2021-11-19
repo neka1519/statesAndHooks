@@ -1,4 +1,4 @@
-import React,{useState} from'react' ;
+/*import React,{useState} from'react' ;
 import{View, Text,Button,StyleSheet} from'react-native';
 
 const App =()=> {
@@ -14,9 +14,7 @@ const updateHandler =()=>{
   setSession({number : 2})
   setCurrent (false)
 }
-
-
-  return(
+return(
 <View style = {styles.container}>
   <Text  styles = {styles.textContainer}>{name} </Text>
   <Text  styles = {styles.textContainer}> 
@@ -48,9 +46,42 @@ const styles = StyleSheet.create({
     marginTop : 100
   }
 })
+export default App; */
+
+import React,{useState} from'react' ;
+import {View, StyleSheet, Text, Button} from 'react-native' ;
+
+const App = ()=>{
+
+//usestate
+const[counter, setCounter] = useState(0);
+
+const updateValue=()=>{
+  setCounter (counter+1)
+}
 
 
+return(
+ <View style = {styles.container}>
+ <Text style = {styles.containerText}> {counter * 5} </Text>
+ <Button title = 'ADD' color = '#45fa00' onPress ={updateValue}>
+ </Button>
+ <Text style = {styles.containerText}> You have pressed the button {counter} times </Text>
+ </View>
+  )
+}
 
-
-
+const styles = StyleSheet.create({
+  container : {
+    flex : '50%',
+    backgroundColor : '#f30154',
+    borderColor : 'yellow',
+    alignContent : 'center',
+    alignItems : 'center'
+  },
+  containerText :{
+fontSize : 20,
+fontStyle : 'italic'
+  }
+})
 export default App;
